@@ -1,0 +1,23 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{ user.name }}</h5>
+    <p class="text-center card-text">
+      <span class="font-weight-bold">Email: </span>{{ user.email }}
+    </p>
+    <p class="text-center card-text">
+      <span class="font-weight-bold">Password: </span>{{ user.password }}
+    </p>
+    <p class="text-center font-italic card-text">
+      <span class="font-weight-bold">Role: </span>{{ user.role }}
+    </p>
+    <div class="text-center">
+      <div *ngIf="user.isBlocked; else isUserNotBlocked">
+        <button class="btn btn-dark" (click)="onUserBlock()">Unblock</button>
+      </div>
+      <ng-template #isUserNotBlocked>
+        <div>
+          <button class="btn btn-danger" (click)="onUserBlock()">Block</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>

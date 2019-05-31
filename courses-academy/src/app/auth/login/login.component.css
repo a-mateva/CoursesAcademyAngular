@@ -1,0 +1,20 @@
+.login-holder {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-holder {
+    border: 2px solid gray;
+    border-radius: 1em;
+    margin: auto;
+    width: 600px;
+    padding: 25px;
+    text-align: center;
+}
+
+.registerLink {
+    color: blue;
+    cursor: pointer;
+}

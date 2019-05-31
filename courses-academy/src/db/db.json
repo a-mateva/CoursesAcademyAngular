@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Moss Tillman",
+      "email": "mosstillman@xanide.com",
+      "password": "moss",
+      "role": "admin",
+      "isBlocked": false
+    },
+    {
+      "id": 2,
+      "name": "Hilary Hinton",
+      "email": "hilaryhinton@xanide.com",
+      "password": "hilary",
+      "role": "user",
+      "isBlocked": false
+    },
+    {
+      "id": 3,
+      "name": "Darlene Wheeler",
+      "email": "darlenewheeler@xanide.com",
+      "password": "darlene",
+      "role": "user",
+      "isBlocked": false
+    },
+    {
+      "id": 4,
+      "name": "Priscilla Chen",
+      "email": "priscillachen@xanide.com",
+      "password": "priscilla",
+      "role": "user",
+      "isBlocked": false
+    },
+    {
+      "id": 5,
+      "name": "Meyer Mendez",
+      "email": "meyermendez@xanide.com",
+      "password": "meyer",
+      "role": "user",
+      "isBlocked": false
+    },
+    {
+      "id": 6,
+      "name": "Marian Summers",
+      "email": "mariansummers@xanide.com",
+      "password": "marian",
+      "role": "user",
+      "isBlocked": false
+    },
+    {
+      "id": 7,
+      "name": "Gerard Way",
+      "email": "gerard@way.com",
+      "isBlocked": true,
+      "password": "asd",
+      "role": "user"
+    },
+    {
+      "id": 8,
+      "name": "",
+      "email": "",
+      "isBlocked": false,
+      "password": "",
+      "role": "user"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Sewing",
+      "description": "Learn how to sew manually and on a machine.",
+      "rating": ""
+    },
+    {
+      "id": 2,
+      "title": "Perfume Making",
+      "description": "What's one more obscure hobby? Your friends already know you're weird.",
+      "rating": ""
+    },
+    {
+      "id": 3,
+      "title": "An Adventure in Wax Seals",
+      "description": "Stationery is cool. You know what makes it even cooler? Covering it in fancy wax.",
+      "rating": ""
+    },
+    {
+      "id": 4,
+      "title": "Rowing with a Spoon",
+      "description": "For all of your underweight friends.",
+      "rating": ""
+    },
+    {
+      "id": 5,
+      "title": "Guitar Lessons",
+      "description": "Don't lie to us, we know you can only play Smoke on the Water. Come learn Wonderwall, too!",
+      "rating": ""
+    },
+    {
+      "id": 6,
+      "title": "Untraditional Medicine",
+      "description": "Because you have had that cold for over a week and you'd honestly give up a limb to be able to breathe through your nose.",
+      "rating": ""
+    }
+  ],
+  "ratings": [
+    {
+      "id": 1,
+      "user_id": 6,
+      "course_id": 2,
+      "rating": 5
+    }
+  ]
+}
