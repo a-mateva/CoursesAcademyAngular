@@ -14,41 +14,6 @@ export class AuthService {
 
     }
 
-
-    /*public registerUser(name: string, email: string,
-        password: string, repeatPassword: string): Observable<UserInterface> {
-        if (password !== repeatPassword) {
-            return new Observable((subscriber) => {
-                subscriber.error("passwords don't match");
-            });
-        }
-
-        let userExists = false;
-        this.usersService.getByEmail(email).subscribe(response => {
-            if (response.length !== 0) {
-                userExists = true;
-            }
-        });
-
-        if (userExists) {
-            return new Observable(subscriber => {
-                subscriber.error("a user with such email already exists");
-            });
-        }
-
-        let newUser: UserInterface = {
-            id: null,
-            name: name,
-            email: email,
-            isBlocked: false,
-            password: password,
-            role: 'user'
-        };
-
-        this.http.post('http://localhost:3000/users', newUser);
-
-        }*/
-
     public registerUser(name: string, email: string, password: string, repeatPassword: string):
         Observable<UserInterface> {
         return new Observable((observer) => {
@@ -66,7 +31,7 @@ export class AuthService {
                         isBlocked: false,
                         password: password,
                         role: 'user'
-                    };                    
+                    };
                     this.http.post('http://localhost:3000/users', newUser).subscribe();
                 }
             });
@@ -76,6 +41,20 @@ export class AuthService {
 
     public isLoggedIn(): boolean {
         return !!sessionStorage.getItem('loggedUser'); // use !! to convert to boolean
+    }
+
+    public getLoggedUser(): UserInterface {
+        return JSON.parse(sessionStorage.getItem('loggedUser'));
+    }
+
+    public getIsAdmin(): boolean {
+        if (!this.isLoggedIn()) {
+            return false;
+        } else if (this.getLoggedUser().role === 'admin'){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public login(email: string, password: string): Observable<UserInterface> {

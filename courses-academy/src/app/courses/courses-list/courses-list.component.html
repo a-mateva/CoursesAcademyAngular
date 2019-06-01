@@ -1,7 +1,9 @@
 <div class="courses-holder">
   <div class="row text-left mt-3 col-2">
     <h3>Courses</h3>
-    <button class="btn btn-success mr-2" (click)="onAddCourse()">Add new course</button>
+    <div *ngIf="isAdmin">
+      <button class="btn btn-success mr-2" (click)="onAddCourse()">Add new course</button>
+    </div>
   </div>
   <div class="row">
     <div class="course-card col-4 mt-3 mb-3" *ngFor='let currentCourse of courses; let index = index'>

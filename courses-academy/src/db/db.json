@@ -52,7 +52,7 @@
       "id": 7,
       "name": "Gerard Way",
       "email": "gerard@way.com",
-      "isBlocked": true,
+      "isBlocked": false,
       "password": "asd",
       "role": "user"
     },

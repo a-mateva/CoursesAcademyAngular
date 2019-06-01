@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import CourseInterface from '../models/course.model';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-course-card',
@@ -10,17 +11,21 @@ import { Router } from '@angular/router';
 export class CourseCardComponent implements OnInit {
   @Input() course: CourseInterface
   @Output() onDelete: EventEmitter<number> = new EventEmitter<number>();
-
-  constructor(private router: Router) { }
+  isAdmin: boolean;
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    this.isAdmin = this.authService.getIsAdmin();
   }
 
   onCourseDelete() {
-    this.onDelete.emit(this.course.id);
+    if (this.authService.isLoggedIn() && this.isAdmin) {
+      this.onDelete.emit(this.course.id);
+    }
   }
 
   onCourseEdit() {
+    if (this.authService.isLoggedIn() && this.isAdmin)
     this.router.navigate(['courses/add', this.course.id]);
   }
 
