@@ -33,10 +33,12 @@ export class RegisterComponent implements OnInit {
   onRegister(): void {
     this.authService.registerUser(this.registerForm.value.name, this.registerForm.value.email,
       this.registerForm.value.password, this.registerForm.value.repeatPassword).subscribe((user) => {
-        console.log("login successful");
-        console.log(user)
+        console.log("register successful");
+        console.log(user);
       }, (error) => {
         console.log(error);
       });
+      
+      this.redirectToLogin();
   }
 }

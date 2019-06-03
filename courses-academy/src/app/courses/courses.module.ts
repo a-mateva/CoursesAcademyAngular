@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import routes from './routes';
+import { AdminGuard } from '../auth/guards/admin.guard';
 
 @NgModule({
     declarations: [

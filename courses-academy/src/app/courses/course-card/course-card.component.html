@@ -6,15 +6,15 @@
     </p>
   </div>
   <div class="ml-2 mb-2">
-      <div *ngIf="isAdmin">
-          <button class="btn btn-danger" (click)="onCourseDelete()">Delete</button>
-          <button class="btn btn-dark ml-2" (click)="onCourseEdit()">Edit</button>
-        </div>
+    <div *ngIf="isAdmin()">
+      <button class="btn btn-danger" (click)="onCourseDelete()">Delete</button>
+      <button class="btn btn-dark ml-2" (click)="onCourseEdit()">Edit</button>
+    </div>
   </div>
-  
+
   <div class="ml-2 mb-2">
-    <div *ngIf="!isAdmin">
-      <button class="btn btn-dark">Join</button>
+    <div *ngIf="isLoggedIn() && !isAdmin()">
+      <button class="btn btn-dark" (click)="onCourseJoin()">Join</button>
       <button class="btn btn-light ml-2">Rate</button>
     </div>
   </div>

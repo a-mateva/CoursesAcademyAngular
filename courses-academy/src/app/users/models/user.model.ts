@@ -5,4 +5,5 @@ export default interface UserInterface {
     password: string;
     role: string;
     isBlocked: boolean;
+    courses?: number[];
 }

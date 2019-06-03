@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CoursesService } from '../services/courses.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-add-course',
@@ -13,7 +14,7 @@ export class AddCourseComponent implements OnInit {
 
   courseForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private coursesService: CoursesService, 
+  constructor(private authService: AuthService, private fb: FormBuilder, private coursesService: CoursesService, 
     private router: Router, private route: ActivatedRoute) { 
       this.route.params.subscribe((params) => {
         console.log(params);
@@ -35,6 +36,10 @@ export class AddCourseComponent implements OnInit {
         description: ['', Validators.required],
         rating: ['']
       });
+    }
+
+    isAdmin(): boolean {
+      return this.authService.isAdmin();
     }
 
     onFormSubmit(event: Event): void {

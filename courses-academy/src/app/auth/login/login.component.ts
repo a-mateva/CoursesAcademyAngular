@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { isFulfilled } from 'q';
 
 @Component({
   selector: 'app-login',
@@ -30,13 +31,17 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
     this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe((user) => {
-        console.log("login successful");
-        console.log(user);
-        //TODO change this url, should lead somewhere else
-        this.router.navigateByUrl('courses/list'),
-          (error) => {
-            console.log(error);
-          } 
+        if (user.isBlocked) {
+          return;
+        } else {
+          console.log("login successful");
+          user.courses = new Array();
+          console.log(user);
+          this.router.navigateByUrl('courses/list'),
+            (error) => {
+              console.log(error);
+            } 
+        }        
       });
   }
 }

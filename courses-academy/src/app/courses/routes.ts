@@ -3,6 +3,8 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { Routes } from '@angular/router';
 import { AuthenticatedGuard } from '../auth/guards/authenticated.guard';
+import { AdminGuard } from '../auth/guards/admin.guard';
+import { BlockedGuard } from '../auth/guards/blocked.guard';
 
 const routes: Routes = [
     {
@@ -11,17 +13,18 @@ const routes: Routes = [
         children: [
             {
                 path: 'list', 
-                component: CoursesListComponent
+                component: CoursesListComponent, 
+                canActivate: [BlockedGuard]
             },
             {
                 path: 'add', 
                 component: AddCourseComponent, 
-                canLoad: [AuthenticatedGuard]
+                canActivate: [AdminGuard, BlockedGuard]
             },
             {
                 path: 'add/:id', 
                 component: AddCourseComponent,
-                canLoad: [AuthenticatedGuard]
+                canActivate: [AdminGuard, BlockedGuard]
             },
         ]
     }
