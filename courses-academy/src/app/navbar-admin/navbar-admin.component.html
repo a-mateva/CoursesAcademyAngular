@@ -14,9 +14,11 @@
         <div *ngIf="isAdmin(); else isUser">
           <a routerLink="/users/list" class="inline nav-item nav-link">Users</a>
           <a routerLink="/courses/list" class="inline nav-item nav-link">Courses</a>
+          <a routerLink="/courses/list" class="inline nav-item nav-link" (click)="logout()">Logout</a>
         </div>
         <ng-template #isUser>
           <a routerLink="/courses/list" class="inline nav-item nav-link">Courses</a>
+          <a routerLink="/courses/list" class="inline nav-item nav-link" (click)="logout()">Logout</a>
         </ng-template>
 
       </ng-template>

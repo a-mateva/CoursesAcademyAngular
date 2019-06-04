@@ -47,6 +47,26 @@ export class CoursesListComponent implements OnInit {
     }
   }
 
+  onUnenroll(id: number) {
+    if (this.authService.isLoggedIn()) {
+      if (this.user.courses.includes(id)) {
+        let itemPosition;
+        for (let i in this.user.courses) {
+          if (this.user.courses[i] == id) {
+            itemPosition = i;
+          }
+        }
+        this.user.courses.splice(itemPosition, 1);
+        this.usersService.addNewUser(this.user).subscribe(() => {
+          this.authService.updateLoggedUser();
+        });
+        console.log(this.user);
+      } else {
+        console.log('user is not enrolled in the first place');
+      }
+    }
+  }
+
   onJoin(id: number) {
     if (this.authService.isLoggedIn()) {
       if (this.user.courses.includes(id)) {

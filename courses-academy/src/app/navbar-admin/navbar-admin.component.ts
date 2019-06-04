@@ -13,6 +13,10 @@ export class NavbarAdminComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+    this.authService.logout();
+  }
+
   isAdmin(): boolean {
     return this.authService.isAdmin();
   }

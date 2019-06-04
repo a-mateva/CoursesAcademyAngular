@@ -13,8 +13,8 @@ const routes: Routes = [
             {
                 path: 'users',
                 loadChildren: './users/users.module#UsersModule',
-                canLoad: [AdminGuard, AuthenticatedGuard],
-                canActivate: [BlockedGuard]
+                canLoad: [AuthenticatedGuard],
+                canActivate: [BlockedGuard, AdminGuard]
             },
         ]
     },

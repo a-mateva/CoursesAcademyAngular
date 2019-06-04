@@ -9,13 +9,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import routes from './routes';
 import { AdminGuard } from '../auth/guards/admin.guard';
+import { RateCourseComponent } from './rate-course/rate-course.component';
 
 @NgModule({
     declarations: [
         CoursesComponent, 
         CoursesListComponent, 
         AddCourseComponent, 
-        CourseCardComponent
+        CourseCardComponent, 
+        RateCourseComponent
     ], 
     imports: [
         CommonModule, 

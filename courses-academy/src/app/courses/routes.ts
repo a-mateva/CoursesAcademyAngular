@@ -5,6 +5,7 @@ import { Routes } from '@angular/router';
 import { AuthenticatedGuard } from '../auth/guards/authenticated.guard';
 import { AdminGuard } from '../auth/guards/admin.guard';
 import { BlockedGuard } from '../auth/guards/blocked.guard';
+import { RateCourseComponent } from './rate-course/rate-course.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,11 @@ const routes: Routes = [
                 component: AddCourseComponent,
                 canActivate: [AdminGuard, BlockedGuard]
             },
+            {
+                path:'rate/:id',
+                component: RateCourseComponent,
+                canActivate: [BlockedGuard]
+            }
         ]
     }
 ]

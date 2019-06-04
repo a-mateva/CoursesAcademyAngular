@@ -51,7 +51,10 @@
       "password": "marian",
       "role": "user",
       "isBlocked": false,
-      "courses": []
+      "courses": [
+        2,
+        6
+      ]
     },
     {
       "id": 7,
@@ -95,6 +98,8 @@
       "password": "aaa",
       "role": "user",
       "courses": [
+        1,
+        5,
         2
       ]
     },
@@ -107,9 +112,19 @@
       "role": "user",
       "courses": [
         2,
-        3,
-        6,
         1
+      ]
+    },
+    {
+      "id": 12,
+      "name": "name",
+      "email": "name",
+      "isBlocked": false,
+      "password": "name",
+      "role": "user",
+      "courses": [
+        2,
+        5
       ]
     }
   ],
@@ -130,6 +145,12 @@
       "id": 3,
       "title": "An Adventure in Wax Seals",
       "description": "Stationery is cool. You know what makes it even cooler? Covering it in fancy wax.",
+      "rating": ""
+    },
+    {
+      "id": 4,
+      "title": "Canoeing in Plovdiv",
+      "description": "No, not in the Rowing channel, just on the streets of Plovdiv :)",
       "rating": ""
     },
     {

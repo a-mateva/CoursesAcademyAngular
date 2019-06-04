@@ -14,6 +14,7 @@ export class CourseCardComponent implements OnInit {
   @Input() course: CourseInterface
   @Output() onDelete: EventEmitter<number> = new EventEmitter<number>();
   @Output() onJoin: EventEmitter<number> = new EventEmitter();
+  @Output() onUnenroll: EventEmitter<number> = new EventEmitter();
 
   constructor(private router: Router, private usersService: UsersService, private authService: AuthService) { }
 
@@ -39,7 +40,7 @@ export class CourseCardComponent implements OnInit {
       this.router.navigate(['courses/add', this.course.id]);
   }
 
-  private isUserEnrolled(): boolean {
+  isUserEnrolled(): boolean {
     if (!this.authService.isLoggedIn()) {
       return false;
     } else {
@@ -47,11 +48,19 @@ export class CourseCardComponent implements OnInit {
     }
   }
 
-  onCourseJoin() {
+  onCourseUnenroll() {
     if (this.isUserEnrolled()) {
-      console.log('user is already enrolled in this course');
-    } else {
+      this.onUnenroll.emit(this.course.id);
+    }
+  }
+
+  onCourseJoin() {
+    if (!this.isUserEnrolled()) {
       this.onJoin.emit(this.course.id);
     }
+  }
+
+  onRate() {
+    this.router.navigateByUrl(`courses/rate/${this.course.id}`);
   }
 }

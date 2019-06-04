@@ -4,6 +4,9 @@
     <p class="card-text">
       {{ course.description }}
     </p>
+    <p class="card-text">
+      {{ course.rating }}
+    </p>
   </div>
   <div class="ml-2 mb-2">
     <div *ngIf="isAdmin()">
@@ -14,8 +17,13 @@
 
   <div class="ml-2 mb-2">
     <div *ngIf="isLoggedIn() && !isAdmin()">
-      <button class="btn btn-dark" (click)="onCourseJoin()">Join</button>
-      <button class="btn btn-light ml-2">Rate</button>
+      <div *ngIf="!isUserEnrolled(); else isEnrolled">
+        <button class="btn btn-dark" (click)="onCourseJoin()">Join</button>
+      </div>
+      <ng-template #isEnrolled>
+          <button class="btn btn-danger" (click)="onCourseUnenroll()">Unenroll</button>
+          <button class="btn btn-light ml-2" (click)="onRate()">Rate</button>        
+      </ng-template>        
     </div>
   </div>
 </div>
