@@ -20,7 +20,6 @@ export class CoursesListComponent implements OnInit {
 
   ngOnInit() {
     this.coursesService.getAllCourses().subscribe((response) => {
-      console.log(response); //for test purposes
       this.courses = response;
     })
   }
@@ -67,6 +66,10 @@ export class CoursesListComponent implements OnInit {
     }
   }
 
+  onRate(course_id: number) {
+    this.authService.getLoggedUser().courses.push(this.courses.find(c => c.id === course_id).id);
+  }
+
   onJoin(id: number) {
     if (this.authService.isLoggedIn()) {
       if (this.user.courses.includes(id)) {
@@ -75,6 +78,9 @@ export class CoursesListComponent implements OnInit {
         this.user.courses.push(id);
         this.usersService.addNewUser(this.user).subscribe(() => {
           this.authService.updateLoggedUser();
+          this.coursesService.getAllCourses().subscribe((response) => {
+            this.courses = response;
+          });
         });
         console.log(this.user);
       }

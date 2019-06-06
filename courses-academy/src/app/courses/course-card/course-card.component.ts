@@ -15,6 +15,7 @@ export class CourseCardComponent implements OnInit {
   @Output() onDelete: EventEmitter<number> = new EventEmitter<number>();
   @Output() onJoin: EventEmitter<number> = new EventEmitter();
   @Output() onUnenroll: EventEmitter<number> = new EventEmitter();
+  @Output() onRate: EventEmitter<number> = new EventEmitter();
 
   constructor(private router: Router, private usersService: UsersService, private authService: AuthService) { }
 
@@ -60,7 +61,8 @@ export class CourseCardComponent implements OnInit {
     }
   }
 
-  onRate() {
+  onCourseRate() {
+    this.onRate.emit(this.course.id);
     this.router.navigateByUrl(`courses/rate/${this.course.id}`);
   }
 }

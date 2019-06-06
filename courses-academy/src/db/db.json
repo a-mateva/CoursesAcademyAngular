@@ -75,7 +75,8 @@
       "role": "user",
       "courses": [
         1,
-        2
+        2,
+        8
       ]
     },
     {
@@ -176,7 +177,11 @@
       "courses": [
         6,
         1,
-        8
+        8,
+        9,
+        7,
+        4,
+        2
       ]
     }
   ],
@@ -205,21 +210,8 @@
       "id": 2,
       "title": "Perfume Making",
       "description": "What's one more obscure hobby? Your friends already know you're weird.",
-      "rating": 5,
-      "ratings": [
-        {
-          "user_id": 13,
-          "rating_value": 3
-        },
-        {
-          "user_id": 9,
-          "rating_value": 8
-        },
-        {
-          "user_id": 4,
-          "rating_value": 4
-        }
-      ]
+      "rating": 10,
+      "ratings": []
     },
     {
       "id": 3,
@@ -237,7 +229,7 @@
       "id": 4,
       "title": "Birdwatching",
       "description": "Spacing out is underrated. Look at some cool birds.",
-      "rating": "",
+      "rating": 5,
       "ratings": []
     },
     {
@@ -276,14 +268,7 @@
       "id": 7,
       "title": "Rowing with a Spoon",
       "description": "For all of your underweight friends.",
-      "rating": "",
-      "ratings": []
-    },
-    {
-      "id": 8,
-      "title": "Kite Making",
-      "description": "For your inner child.",
-      "rating": "",
+      "rating": 4,
       "ratings": []
     }
   ]

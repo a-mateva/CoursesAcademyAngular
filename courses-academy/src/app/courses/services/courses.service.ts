@@ -37,6 +37,7 @@ export class CoursesService {
   }
 
   addNewCourse(course: CourseInterface): Observable<any> {
+    course.ratings = [];
     if (course.id) {
       return this.http.put(`http://localhost:3000/courses/${course.id}`, course);
     } else {
