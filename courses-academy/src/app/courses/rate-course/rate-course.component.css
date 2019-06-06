@@ -1,0 +1,6 @@
+.error {
+    display: flex;
+    position: absolute;
+    right: 10%;
+    font-size: 25pt;
+}

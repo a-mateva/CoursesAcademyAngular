@@ -79,7 +79,7 @@ export class AuthService {
           sessionStorage.setItem('loggedUser', JSON.stringify(user));
           observer.next(user); //tells us that a user exists
           observer.complete();
-        } else if (user.isBlocked) {
+        } else if (user && user.isBlocked) {
           observer.error('User is blocked');
         } else {
           observer.error('Incorrect username or password.');

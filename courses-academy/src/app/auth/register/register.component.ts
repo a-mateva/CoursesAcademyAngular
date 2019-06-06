@@ -30,6 +30,26 @@ export class RegisterComponent implements OnInit {
     this.router.navigateByUrl("auth/login");
   }
 
+  get isFormValid(): boolean {
+    return this.registerForm.valid;
+  }
+
+  get name() {
+    return this.registerForm.get('name');
+  }
+
+  get email() {
+    return this.registerForm.get('email');
+  }
+
+  get password() {
+    return this.registerForm.get('password');
+  }
+
+  get repeatPassword() {
+    return this.registerForm.get('repeatPassword');
+  }
+
   onRegister(): void {
     this.authService.registerUser(this.registerForm.value.name, this.registerForm.value.email,
       this.registerForm.value.password, this.registerForm.value.repeatPassword).subscribe((user) => {

@@ -34,7 +34,8 @@ export class AddCourseComponent implements OnInit {
         id: [''], 
         title: ['', Validators.required], 
         description: ['', Validators.required],
-        rating: ['']
+        rating: [''], 
+        ratings: ['']
       });
     }
 
@@ -50,6 +51,7 @@ export class AddCourseComponent implements OnInit {
       });
     }
 
+    //for error displaying in template
     get isFormValid(): boolean {
       return this.courseForm.valid;
     }

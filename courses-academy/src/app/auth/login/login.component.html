@@ -8,10 +8,9 @@
                         <div class="form-group">
                             <label>Email</label>
                             <input type="text" class="form-control" formControlName="email">
-                        </div>
-
-                        <div class="error" *ngIf="email?.errors">
-                            <span class="text-danger" *ngIf="email.errors.required">Required field.</span>
+                            <div class="error" *ngIf="email?.errors">
+                                <span class="text-danger" *ngIf="email.errors.required">Required field.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -21,9 +20,9 @@
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" class="form-control" formControlName="password">
-                        </div>
-                        <div class="error" *ngIf="password?.errors">
-                            <span class="text-danger" *ngIf="password.errors.required">Required field.</span>
+                            <div class="error" *ngIf="password?.errors">
+                                <span class="text-danger" *ngIf="password.errors.required">Required field.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -33,7 +32,7 @@
                         <span (click)="redirectToRegister()" class="registerLink mr-2">
                             Don't have an account yet?
                         </span>
-                        <button type="submit" class="btn btn-success">Login</button>
+                        <button type="submit" class="btn btn-success" [disabled]="!isFormValid">Login</button>
                     </div>
                 </div>
             </form>

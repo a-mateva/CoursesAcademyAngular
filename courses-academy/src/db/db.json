@@ -2,9 +2,9 @@
   "users": [
     {
       "id": 1,
-      "name": "Moss Tillman",
-      "email": "mosstillman@xanide.com",
-      "password": "moss",
+      "name": "admin",
+      "email": "admin",
+      "password": "admin",
       "role": "admin",
       "isBlocked": false
     },
@@ -24,7 +24,10 @@
       "password": "darlene",
       "role": "user",
       "isBlocked": false,
-      "courses": []
+      "courses": [
+        2,
+        3
+      ]
     },
     {
       "id": 4,
@@ -33,7 +36,11 @@
       "password": "priscilla",
       "role": "user",
       "isBlocked": false,
-      "courses": []
+      "courses": [
+        2,
+        3,
+        5
+      ]
     },
     {
       "id": 5,
@@ -42,7 +49,10 @@
       "password": "meyer",
       "role": "user",
       "isBlocked": false,
-      "courses": []
+      "courses": [
+        3,
+        5
+      ]
     },
     {
       "id": 6,
@@ -63,7 +73,10 @@
       "isBlocked": false,
       "password": "asd",
       "role": "user",
-      "courses": []
+      "courses": [
+        1,
+        2
+      ]
     },
     {
       "id": 8,
@@ -87,7 +100,9 @@
       "password": "new",
       "role": "user",
       "courses": [
-        1
+        1,
+        2,
+        5
       ]
     },
     {
@@ -111,7 +126,6 @@
       "password": "ccc",
       "role": "user",
       "courses": [
-        2,
         1
       ]
     },
@@ -126,6 +140,44 @@
         2,
         5
       ]
+    },
+    {
+      "id": 13,
+      "name": "iliyanko",
+      "email": "iliyanko",
+      "isBlocked": false,
+      "password": "doggo",
+      "role": "user",
+      "courses": [
+        4,
+        1,
+        2,
+        7,
+        5,
+        3
+      ]
+    },
+    {
+      "id": 14,
+      "name": "",
+      "email": "",
+      "isBlocked": false,
+      "password": "",
+      "role": "user",
+      "courses": []
+    },
+    {
+      "id": 15,
+      "name": "asd",
+      "email": "asd",
+      "isBlocked": false,
+      "password": "asd",
+      "role": "user",
+      "courses": [
+        6,
+        1,
+        8
+      ]
     }
   ],
   "courses": [
@@ -133,45 +185,106 @@
       "id": 1,
       "title": "Sewing",
       "description": "Learn how to sew manually and on a machine.",
-      "rating": ""
+      "rating": 5.666666666666667,
+      "ratings": [
+        {
+          "user_id": 11,
+          "rating_value": 8
+        },
+        {
+          "user_id": 9,
+          "rating_value": 2
+        },
+        {
+          "user_id": 15,
+          "rating_value": 7
+        }
+      ]
     },
     {
       "id": 2,
       "title": "Perfume Making",
       "description": "What's one more obscure hobby? Your friends already know you're weird.",
-      "rating": ""
+      "rating": 5,
+      "ratings": [
+        {
+          "user_id": 13,
+          "rating_value": 3
+        },
+        {
+          "user_id": 9,
+          "rating_value": 8
+        },
+        {
+          "user_id": 4,
+          "rating_value": 4
+        }
+      ]
     },
     {
       "id": 3,
       "title": "An Adventure in Wax Seals",
       "description": "Stationery is cool. You know what makes it even cooler? Covering it in fancy wax.",
-      "rating": ""
+      "rating": 9,
+      "ratings": [
+        {
+          "user_id": 4,
+          "rating_value": 9
+        }
+      ]
     },
     {
       "id": 4,
-      "title": "Canoeing in Plovdiv",
-      "description": "No, not in the Rowing channel, just on the streets of Plovdiv :)",
-      "rating": ""
+      "title": "Birdwatching",
+      "description": "Spacing out is underrated. Look at some cool birds.",
+      "rating": "",
+      "ratings": []
     },
     {
       "id": 5,
       "title": "Guitar Lessons",
       "description": "Don't lie to us, we know you can only play Smoke on the Water. Come learn Wonderwall, too!",
-      "rating": ""
+      "rating": 6,
+      "ratings": [
+        {
+          "user_id": 13,
+          "rating_value": 3
+        },
+        {
+          "user_id": 9,
+          "rating_value": 8
+        },
+        {
+          "user_id": 4,
+          "rating_value": 7
+        }
+      ]
     },
     {
       "id": 6,
       "title": "Untraditional Medicine",
       "description": "Because you have had that cold for over a week and you'd honestly give up a limb to be able to breathe through your nose.",
-      "rating": ""
-    }
-  ],
-  "ratings": [
+      "rating": 8,
+      "ratings": [
+        {
+          "user_id": 15,
+          "rating_value": 8
+        }
+      ]
+    },
     {
-      "id": 1,
-      "user_id": 6,
-      "course_id": 2,
-      "rating": 5
+      "id": 7,
+      "title": "Rowing with a Spoon",
+      "description": "For all of your underweight friends.",
+      "rating": "",
+      "ratings": []
+    },
+    {
+      "id": 8,
+      "title": "Kite Making",
+      "description": "For your inner child.",
+      "rating": "",
+      "ratings": []
     }
   ]
 }
